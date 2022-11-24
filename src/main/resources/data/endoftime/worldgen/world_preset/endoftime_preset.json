@@ -1,0 +1,28 @@
+{
+	"dimensions": {
+		"minecraft:overworld": {
+			"type": "minecraft:overworld",
+			"generator": {
+				"type": "minecraft:noise",
+				"settings": "endoftime:endoftime_noise_settings",
+				"biome_source": {
+					"type": "minecraft:multi_noise",
+					"biomes": [
+						{
+							"biome": "endoftime:endoftime_biome",
+							"parameters": {
+								"temperature": 0,
+								"humidity": 0,
+								"continentalness": 0,
+								"erosion": 0,
+								"weirdness": 0,
+								"depth": 0,
+								"offset": 0
+							}
+						}
+					]
+				}
+			}
+		}
+	}
+}

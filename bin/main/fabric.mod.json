@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "endoftime",
+  "version": "${version}",
+  "name": "End of Time",
+  "description": "This is a remake of the old 1.2.5 mod End of Time",
+  "authors":
+  [
+    "isRadiant[Remaker], acid1103[Idea, Original Mod], lewis_monster[Successor]"
+  ],
+  "icon": "assets/endoftime/icon.png",
+  "environment": "*",
+  "entrypoints":
+  {
+    "main":
+    [
+      "me.isRadiant.endoftime.core.Main"
+    ],
+    "cardinal-components":
+    [
+      "me.isRadiant.endoftime.core.registration.ComponentReg"
+    ],
+    "client":
+    [
+      "me.isRadiant.endoftime.client.MainClient"
+    ]
+  },
+  "custom":
+  {
+    "cardinal-components":
+    [
+      "endoftime:player_booleans"
+    ]
+  },
+  "mixins":
+  [
+    "endoftime.mixins.json"
+  ],
+  "depends":
+  {
+    "fabricloader": ">=0.14.9",
+    "fabric-api": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  },
+  "suggests":
+  {
+    "another-mod": "*"
+  }
+}

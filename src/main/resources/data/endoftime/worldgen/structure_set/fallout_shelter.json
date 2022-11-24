@@ -1,0 +1,16 @@
+{
+    "structures":
+    [
+        {
+        "structure": "endoftime:fallout_shelter",
+        "weight": 1
+        }
+    ],
+    "placement":
+    {
+        "salt": 8711695058,
+        "spacing": 50,
+        "separation": 20,
+        "type": "minecraft:random_spread"
+    }
+}

@@ -1,0 +1,210 @@
+---- Minecraft Crash Report ----
+// You should try our sister game, Minceraft!
+
+Time: 2022-11-22 16:03:42
+Description: Ticking entity
+
+java.lang.IllegalArgumentException: Can't find attribute minecraft:generic.attack_knockback
+	at net.minecraft.entity.attribute.DefaultAttributeContainer.require(DefaultAttributeContainer.java:29)
+	at net.minecraft.entity.attribute.DefaultAttributeContainer.getValue(DefaultAttributeContainer.java:33)
+	at net.minecraft.entity.attribute.AttributeContainer.getValue(AttributeContainer.java:72)
+	at net.minecraft.entity.LivingEntity.getAttributeValue(LivingEntity.java:1780)
+	at net.minecraft.entity.mob.MobEntity.tryAttack(MobEntity.java:1356)
+	at net.minecraft.entity.ai.goal.MeleeAttackGoal.attack(MeleeAttackGoal.java:132)
+	at net.minecraft.entity.ai.goal.MeleeAttackGoal.tick(MeleeAttackGoal.java:124)
+	at net.minecraft.entity.ai.goal.PrioritizedGoal.tick(PrioritizedGoal.java:70)
+	at net.minecraft.entity.ai.goal.GoalSelector.tickGoals(GoalSelector.java:127)
+	at net.minecraft.entity.mob.MobEntity.tickNewAi(MobEntity.java:718)
+	at net.minecraft.entity.LivingEntity.tickMovement(LivingEntity.java:2424)
+	at net.minecraft.entity.mob.MobEntity.tickMovement(MobEntity.java:528)
+	at net.minecraft.entity.mob.HostileEntity.tickMovement(HostileEntity.java:50)
+	at net.minecraft.entity.LivingEntity.tick(LivingEntity.java:2192)
+	at net.minecraft.entity.mob.MobEntity.tick(MobEntity.java:356)
+	at net.minecraft.server.world.ServerWorld.tickEntity(ServerWorld.java:629)
+	at net.minecraft.world.World.tickEntity(World.java:465)
+	at net.minecraft.server.world.ServerWorld.method_31420(ServerWorld.java:346)
+	at net.minecraft.world.EntityList.forEach(EntityList.java:78)
+	at net.minecraft.server.world.ServerWorld.tick(ServerWorld.java:323)
+	at net.minecraft.server.MinecraftServer.tickWorlds(MinecraftServer.java:841)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:796)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:93)
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:650)
+	at net.minecraft.server.MinecraftServer.method_29739(MinecraftServer.java:278)
+	at java.base/java.lang.Thread.run(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraft.entity.attribute.DefaultAttributeContainer.require(DefaultAttributeContainer.java:29)
+	at net.minecraft.entity.attribute.DefaultAttributeContainer.getValue(DefaultAttributeContainer.java:33)
+	at net.minecraft.entity.attribute.AttributeContainer.getValue(AttributeContainer.java:72)
+	at net.minecraft.entity.LivingEntity.getAttributeValue(LivingEntity.java:1780)
+	at net.minecraft.entity.mob.MobEntity.tryAttack(MobEntity.java:1356)
+	at net.minecraft.entity.ai.goal.MeleeAttackGoal.attack(MeleeAttackGoal.java:132)
+	at net.minecraft.entity.ai.goal.MeleeAttackGoal.tick(MeleeAttackGoal.java:124)
+	at net.minecraft.entity.ai.goal.PrioritizedGoal.tick(PrioritizedGoal.java:70)
+	at net.minecraft.entity.ai.goal.GoalSelector.tickGoals(GoalSelector.java:127)
+	at net.minecraft.entity.mob.MobEntity.tickNewAi(MobEntity.java:718)
+	at net.minecraft.entity.LivingEntity.tickMovement(LivingEntity.java:2424)
+	at net.minecraft.entity.mob.MobEntity.tickMovement(MobEntity.java:528)
+	at net.minecraft.entity.mob.HostileEntity.tickMovement(HostileEntity.java:50)
+	at net.minecraft.entity.LivingEntity.tick(LivingEntity.java:2192)
+	at net.minecraft.entity.mob.MobEntity.tick(MobEntity.java:356)
+	at net.minecraft.server.world.ServerWorld.tickEntity(ServerWorld.java:629)
+	at net.minecraft.world.World.tickEntity(World.java:465)
+	at net.minecraft.server.world.ServerWorld.method_31420(ServerWorld.java:346)
+	at net.minecraft.world.EntityList.forEach(EntityList.java:78)
+	at net.minecraft.server.world.ServerWorld.tick(ServerWorld.java:323)
+
+-- Entity being ticked --
+Details:
+	Entity Type: endoftime:molten_pig (me.isRadiant.endoftime.common.entity.MoltenPigEntity)
+	Entity ID: 1
+	Entity Name: entity.endoftime.molten_pig
+	Entity's Exact location: 59.02, 67.00, -166.50
+	Entity's Block location: World: (59,67,-167), Section: (at 11,3,9 in 3,4,-11; chunk contains blocks 48,-64,-176 to 63,319,-161), Region: (0,-1; contains chunks 0,-32 to 31,-1, blocks 0,-64,-512 to 511,319,-1)
+	Entity's Momentum: 0.02, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: null
+Stacktrace:
+	at net.minecraft.world.World.tickEntity(World.java:465)
+	at net.minecraft.server.world.ServerWorld.method_31420(ServerWorld.java:346)
+	at net.minecraft.world.EntityList.forEach(EntityList.java:78)
+	at net.minecraft.server.world.ServerWorld.tick(ServerWorld.java:323)
+	at net.minecraft.server.MinecraftServer.tickWorlds(MinecraftServer.java:841)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:796)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:93)
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:650)
+	at net.minecraft.server.MinecraftServer.method_29739(MinecraftServer.java:278)
+	at java.base/java.lang.Thread.run(Unknown Source)
+
+-- Affected level --
+Details:
+	All players: 1 total; [ServerPlayerEntity['Player934'/10, l='ServerLevel[New World]', x=60.75, y=67.00, z=-166.28]]
+	Chunk stats: 2809
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (64,67,-160), Section: (at 0,3,0 in 4,4,-10; chunk contains blocks 64,-64,-160 to 79,319,-145), Region: (0,-1; contains chunks 0,-32 to 31,-1, blocks 0,-64,-512 to 511,319,-1)
+	Level time: 2875 game time, 2875 day time
+	Level name: New World
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: true
+	Level weather: Rain time: 101938 (now: false), thunder time: 170071 (now: false)
+	Known server brands: fabric
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.tickWorlds(MinecraftServer.java:841)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:796)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:93)
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:650)
+	at net.minecraft.server.MinecraftServer.method_29739(MinecraftServer.java:278)
+	at java.base/java.lang.Thread.run(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.19.2
+	Minecraft Version ID: 1.19.2
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 17.0.4.1, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Eclipse Adoptium
+	Memory: 977383936 bytes (932 MiB) / 2210398208 bytes (2108 MiB) up to 4276092928 bytes (4078 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 5600X 6-Core Processor             
+	Identifier: AuthenticAMD Family 25 Model 33 Stepping 0
+	Microarchitecture: unknown
+	Frequency (GHz): 3.70
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: AMD Radeon RX 6700 XT
+	Graphics card #0 vendor: Advanced Micro Devices, Inc. (0x1002)
+	Graphics card #0 VRAM (MB): 4095.00
+	Graphics card #0 deviceId: 0x73df
+	Graphics card #0 versionInfo: DriverVersion=30.0.21023.1015
+	Memory slot #0 capacity (MB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 3.60
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 3.60
+	Memory slot #1 type: DDR4
+	Virtual memory max (MB): 35766.23
+	Virtual memory used (MB): 20717.88
+	Swap memory total (MB): 19456.00
+	Swap memory used (MB): 309.62
+	JVM Flags: 4 total; -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,address=localhost:63334,server=n,suspend=y -XX:+ShowCodeDetailsInExceptionMessages
+	Loaded Shaderpack: (off)
+	Fabric Mods: 
+		architectury: Architectury 6.3.49
+		cardinal-components-base: Cardinal Components API (base) 5.0.2
+		cardinal-components-entity: Cardinal Components API (entities) 5.0.2
+		cloth-config: Cloth Config v8 8.2.88
+			cloth-basic-math: cloth-basic-math 0.6.1
+		disable_custom_worlds_advice: Disable Custom Worlds Advice 3.0
+		endoftime: End of Time ${version}
+		fabric-api: Fabric API 0.66.0+1.19.2
+		fabric-api-base: Fabric API Base 0.4.12+93d8cb8290
+		fabric-api-lookup-api-v1: Fabric API Lookup API (v1) 1.6.10+93d8cb8290
+		fabric-biome-api-v1: Fabric Biome API (v1) 9.0.18+c6af733c90
+		fabric-block-api-v1: Fabric Block API (v1) 1.0.0+12bfe4ea90
+		fabric-blockrenderlayer-v1: Fabric BlockRenderLayer Registration (v1) 1.1.21+c6af733c90
+		fabric-client-tags-api-v1: Fabric Client Tags 1.0.2+b35fea8390
+		fabric-command-api-v2: Fabric Command API (v2) 2.1.8+93d8cb8290
+		fabric-content-registries-v0: Fabric Content Registries (v0) 3.4.1+6064db2a90
+		fabric-convention-tags-v1: Fabric Convention Tags 1.1.2+93d8cb8290
+		fabric-crash-report-info-v1: Fabric Crash Report Info (v1) 0.2.6+aeb40ebe90
+		fabric-data-generation-api-v1: Fabric Data Generation API (v1) 5.2.3+b598f4ac90
+		fabric-dimensions-v1: Fabric Dimensions API (v1) 2.1.32+0dd10df690
+		fabric-entity-events-v1: Fabric Entity Events (v1) 1.5.0+a1d87cb890
+		fabric-events-interaction-v0: Fabric Events Interaction (v0) 0.4.29+c6af733c90
+		fabric-game-rule-api-v1: Fabric Game Rule API (v1) 1.0.22+c6af733c90
+		fabric-gametest-api-v1: Fabric Game Test API (v1) 1.1.2+704e47e990
+		fabric-item-api-v1: Fabric Item API (v1) 1.5.8+93d8cb8290
+		fabric-item-groups-v0: Fabric Item Groups (v0) 0.3.33+70efcffe90
+		fabric-key-binding-api-v1: Fabric Key Binding API (v1) 1.0.22+aaaf9d3390
+		fabric-lifecycle-events-v1: Fabric Lifecycle Events (v1) 2.2.0+33ffe9ec90
+		fabric-loot-api-v2: Fabric Loot API (v2) 1.1.7+83a8659290
+		fabric-message-api-v1: Fabric Message API (v1) 5.0.4+93d8cb8290
+		fabric-mining-level-api-v1: Fabric Mining Level API (v1) 2.1.18+33fbc73890
+		fabric-models-v0: Fabric Models (v0) 0.3.18+c6af733c90
+		fabric-networking-api-v1: Fabric Networking API (v1) 1.2.5+c6af733c90
+		fabric-object-builder-api-v1: Fabric Object Builder API (v1) 4.1.0+06e0e25190
+		fabric-particles-v1: Fabric Particles (v1) 1.0.11+79adfe0a90
+		fabric-registry-sync-v0: Fabric Registry Sync (v0) 0.9.26+c6af733c90
+		fabric-renderer-api-v1: Fabric Renderer API (v1) 1.0.13+12bfe4ea90
+		fabric-renderer-indigo: Fabric Renderer - Indigo 0.6.15+aeb40ebe90
+		fabric-rendering-data-attachment-v1: Fabric Rendering Data Attachment (v1) 0.3.16+12bfe4ea90
+		fabric-rendering-fluids-v1: Fabric Rendering Fluids (v1) 3.0.8+c6af733c90
+		fabric-rendering-v1: Fabric Rendering (v1) 1.11.0+73145abb90
+		fabric-resource-conditions-api-v1: Fabric Resource Conditions API (v1) 2.1.0+aae9039d90
+		fabric-resource-loader-v0: Fabric Resource Loader (v0) 0.7.3+3e1ba48e90
+		fabric-screen-api-v1: Fabric Screen API (v1) 1.0.27+93d8cb8290
+		fabric-screen-handler-api-v1: Fabric Screen Handler API (v1) 1.3.1+1cc24b1b90
+		fabric-sound-api-v1: Fabric Sound API (v1) 1.0.0+c4f28df590
+		fabric-textures-v0: Fabric Textures (v0) 1.0.21+aeb40ebe90
+		fabric-transfer-api-v1: Fabric Transfer API (v1) 2.1.1+93d8cb8290
+		fabric-transitive-access-wideners-v1: Fabric Transitive Access Wideners (v1) 1.3.1+42d99c3290
+		fabricloader: Fabric Loader 0.14.10
+		geckolib3: Geckolib 3.1.36
+		iris: Iris 1.4.0
+			io_github_douira_glsl-transformer: glsl-transformer 1.0.0-pre21.2
+			org_anarres_jcpp: jcpp 1.4.14
+			org_antlr_antlr4-runtime: antlr4-runtime 4.10.1
+		java: OpenJDK 64-Bit Server VM 17
+		lazydfu: LazyDFU 0.1.3
+		minecraft: Minecraft 1.19.2
+		modmenu: Mod Menu 4.1.0
+		roughlyenoughitems: Roughly Enough Items 9.1.565
+			error_notifier: Error Notifier 1.0.9
+		sodium: Sodium 0.4.4+build.18
+			org_joml_joml: joml 1.10.4
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayerEntity['Player934'/10, l='ServerLevel[New World]', x=60.75, y=67.00, z=-166.28]]
+	Data Packs: vanilla, Fabric Mods
+	World Generation: Experimental
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fabric'; Server brand changed to 'fabric'
+	Launched Version: Fabric

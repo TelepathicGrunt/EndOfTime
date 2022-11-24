@@ -1,0 +1,69 @@
+{
+	"temperature": 2,
+	"downfall": 0,
+	"precipitation": "none",
+	"effects": {
+		"sky_color": 7240844,
+		"fog_color": 9870502,
+		"water_color": 2765639,
+		"water_fog_color": 2368578,
+		"mood_sound": {
+			"sound": "minecraft:ambient.cave",
+			"tick_delay": 6000,
+			"block_search_extent": 8,
+			"offset": 2
+		}
+	},
+	"spawners": {
+		"ambient": [],
+		"axolotls": [],
+		"creature": [
+			{
+				"type": "endoftime:molten_pig",
+                "weight": 15,
+                "minCount": 1,
+                "maxCount": 2
+			}
+		],
+		"misc": [],
+		"monster": [
+		],
+		"underground_water_creature": [],
+		"water_ambient": [],
+		"water_creature": []
+	},
+	"spawn_costs": {},
+	"carvers": {
+		"air": [
+			"minecraft:cave",
+			"minecraft:cave_extra_underground",
+			"minecraft:canyon"
+		]
+	},
+	"features": [
+		[],
+		[
+			"minecraft:lake_lava_underground",
+			"minecraft:lake_lava_surface"
+		],
+		[],
+		[
+			"minecraft:fossil_upper",
+			"minecraft:fossil_lower"
+		],
+		[
+			"minecraft:desert_well"
+		],
+		[],
+		[],
+		[],
+		[
+			"minecraft:spring_lava"
+		],
+		[
+			"minecraft:patch_dead_bush_2",
+			"minecraft:patch_cactus_desert"
+		],
+		[]
+	]
+}

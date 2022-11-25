@@ -16,6 +16,6 @@ public class EntityReg
     public static void register()
     {
         ModHelper.registerAttributes(EntityReg.MOLTEN_PIG, MoltenPigEntity.createDefaultAttributes());
-        SpawnRestriction.register(MOLTEN_PIG, Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MoltenPigEntity::canSpawn);
+        SpawnRestriction.register(MOLTEN_PIG, Location.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MoltenPigEntity::canSpawn);
     }
 }

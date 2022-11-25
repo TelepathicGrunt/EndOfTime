@@ -30,6 +30,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
@@ -133,7 +134,27 @@ public class MoltenPigEntity extends AnimalEntity implements IAnimatable
 
     public static boolean canSpawn(EntityType<? extends AnimalEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random)
     {
-        return world.getFluidState(pos.down()).isIn(FluidTags.LAVA) || world.getBlockState(pos.down()).isOf(Blocks.LAVA);
+        // Check if we are at lava
+        boolean isLavaSpot = world.getFluidState(pos).isIn(FluidTags.LAVA) || world.getFluidState(pos.down()).isIn(FluidTags.LAVA);
+        if (!isLavaSpot) {
+            return false;
+        }
+
+        // Finds first non-lava block above the lava area
+        BlockPos.Mutable currentPos = new BlockPos.Mutable().set(pos);
+        BlockState currentState;
+        do {
+            currentPos.move(Direction.UP);
+            currentState = world.getBlockState(currentPos);
+        } while (currentState.getFluidState().isIn(FluidTags.LAVA));
+
+        // If non-lava block is not air, we are underground. Do not spawn pig
+        if (!currentState.isAir()) {
+            return false;
+        }
+
+        // We are at air block, check if it can see the sky.
+        return world.isSkyVisible(currentPos);
     }
 
     @Override
